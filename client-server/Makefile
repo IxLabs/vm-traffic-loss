@@ -1,0 +1,9 @@
+build: server client
+	
+server: server.cpp
+		g++ -std=c++11 -I ./../boost_1_57_0 server.cpp -o server
+
+client: client.cpp
+		g++ -std=c++11 -I ./../boost_1_57_0 client.cpp -o client
+clean:
+		rm -f server client
