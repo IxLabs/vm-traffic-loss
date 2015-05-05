@@ -24,7 +24,7 @@ struct prot_details
 
 struct info_settings
 {
-	int pdropped; 
+	int pdropped;
 	string reason;
 	struct prot_details protocol;
 	void load(const std::string &filename);
@@ -111,6 +111,7 @@ int main(int argc,char **argv ) {
 	bool firstTime = true;
 	int delay = atoi(argv[1]);
 	initialize(statistics);
+	initialize(last_stats);
 	
 	while(true){
 		if(!(in = popen("ifconfig", "r"))) {
@@ -125,21 +126,24 @@ int main(int argc,char **argv ) {
 			else {
 				parseInfo_ifconfig(statistics, interface);
 				interface = "";
-				}
+				}	
 		}
 		try
 		{	if(!firstTime){
 				statistics.pdropped -= last_stats.pdropped;
+			}
+			else{
 				firstTime = false;
 			}
-			statistics.save("info_settings_out.xml");
-			std::cout << "Success\n";
+			if(statistics.pdropped != 0){
+				statistics.save("info_settings_out.xml");
+				last_stats.pdropped += statistics.pdropped;
+			}
 		}
 		catch (std::exception &e)
 		{
-			std::cout << "Error: " << e.what() << "\n";
+			cout << "Error: " << e.what() << "\n";
 		}
-		last_stats = statistics;
 		initialize(statistics);
 		pclose(in);
 		this_thread::sleep_for (std::chrono::seconds(delay));
