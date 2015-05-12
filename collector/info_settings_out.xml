@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<statistics><info><reason>ifconfig</reason><pdropped>8</pdropped><protocol><protocol/><sender/><receiver/></protocol></info></statistics>
+<statistics><info><pdropped>16</pdropped><reason>ifconfig</reason><proto_details><protocol>foo</protocol><sender>senderFoo</sender><receiver>receiverBar</receiver><windowSize>0</windowSize><errors><checksum>0</checksum></errors></proto_details><resources><Memory_used>0</Memory_used><CPU_used>0</CPU_used><Sockets_used>0</Sockets_used><Interrupts>0</Interrupts></resources></info></statistics>
