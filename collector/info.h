@@ -24,4 +24,6 @@ struct info_settings
 	void save(const std::string &filename);
 };
 
+void initialize(info_settings& statistics);
+
 #endif

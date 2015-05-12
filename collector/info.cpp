@@ -8,6 +8,10 @@ void info_settings::load(const std::string &filename)
 	std::cout << "Not Implemented yet!";
 }
 
+void initialize(info_settings& statistics){
+	statistics.pdropped = 0;
+}
+
 void info_settings::save(const std::string &filename)
 {
     using boost::property_tree::ptree;

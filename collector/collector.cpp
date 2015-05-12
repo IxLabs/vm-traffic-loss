@@ -9,10 +9,6 @@
 
 using namespace std;
 
-void initialize(info_settings& statistics){
-	statistics.pdropped = 0;
-}
-
 int main(int argc,char **argv ) {
 	struct info_settings statistics;
 	struct info_settings last_stats;
