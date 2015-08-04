@@ -1,0 +1,23 @@
+./collector
+1 600 all vm-1 vm-1 8000
+vm-1
+./collector
+1 600 all vm-2 vm-1 8000
+vm-2
+./collector
+1 600 all vm-3 vm-1 8000
+vm-3
+./collector
+1 600 all vm-4 vm-1 8000
+vm-4
+./sender.sh
+iperf 600 UDP vm-1 59001 8000000000
+vm-2
+./sender.sh
+iperf 600 UDP vm-1 59001 8000000000
+vm-3
+./sender.sh
+iperf 600 UDP vm-1 59001 8000000000
+vm-4
+exit
+
