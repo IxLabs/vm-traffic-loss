@@ -1,0 +1,31 @@
+sudo pkill
+-f -9 receiveFileServer.sh
+vm-1
+sudo pkill
+-f -9 nc
+vm-1
+sudo pkill
+-f -9 iperf
+vm-1
+sudo pkill
+-f -9 iperf
+vm-2
+sudo pkill
+-f -9 iperf
+vm-3
+sudo pkill
+-f -9 iperf
+vm-4
+sudo pkill
+-f -9 netperf
+vm-1
+sudo pkill
+-f -9 netperf
+vm-2
+sudo pkill
+-f -9 netperf
+vm-3
+sudo pkill
+-f -9 netperf
+vm-4
+exit

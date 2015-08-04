@@ -1,0 +1,16 @@
+./receiveFileServer.sh
+
+vm-1
+./receiverTCP.sh
+59000 59001 59002 100k
+vm-1
+./receiverTCP.sh
+59000 59001 59002 100k
+vm-2
+./receiverTCP.sh
+59000 59001 59002 100k
+vm-3
+./receiverTCP.sh
+59000 59001 59002 100k
+vm-4
+exit

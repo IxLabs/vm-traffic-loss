@@ -1,14 +1,20 @@
 #!/bin/bash
 while true; do
-	read -p "Enter command : " comm
+	echo "Enter command : "
+	read comm
+	echo "$comm"
 	if [[ "$comm" == "exit" ]];
-  		then 
+  		then
 			break
 	fi
-	read -p "Enter parameters : " params
-	read -p "Destination for command : " dest
-	echo "Executing "$comm" "$params" "$dest""
+	echo "Enter parameters : "
+	read params
+	echo "$params"
+	echo "Destination for command : "
+	read dest
+	echo "$dest"
+	echo "Executing "$comm" "$params" with destination "$dest""
 	final_comm="$comm $params"
-	ssh "$dest" "$final_comm" "> comm_output 2>&1 &"
-	echo "Command "$final_comm" was executed! at "$dest""	
+	ssh -f -n "$dest" "$final_comm" "> comm_output 2>&1 &"
+	echo "Command "$final_comm" was executed! at "$dest""
 done
